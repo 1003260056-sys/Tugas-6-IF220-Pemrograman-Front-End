@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Katalog Produk Modern - Implementasi Komponen Dasar Antarmuka Web dengan HTML, CSS, dan JavaScript murni.">
+  <title>Katalog Produk Modern | TokoKita</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <a href="#" class="brand-logo" aria-label="TokoKita Beranda">
+        <span class="logo-icon" aria-hidden="true">🛍️</span>
+        <span class="logo-text">Toko<strong>Kita</strong></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Buka navigasi menu" aria-expanded="false"
+        aria-controls="primaryNav">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <!-- Navigasi Menu -->
+      <nav class="primary-nav" id="primaryNav" aria-label="Navigasi Utama">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Beranda</a></li>
+          <li class="nav-item"><a href="#katalog" class="nav-link">Katalog</a></li>
+          <li class="nav-item"><a href="#fitur" class="nav-link">Keunggulan</a></li>
+          <li class="nav-item"><a href="#kontak" class="nav-link">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <!-- Aksi Navigasi: Keranjang & Dark Mode -->
+      <div class="header-actions">
+        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Ganti mode gelap/terang" title="Ganti Tema">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+        <button class="cart-button" id="cartBtn" aria-label="Lihat Keranjang Belanja">
+          <span class="cart-icon" aria-hidden="true">🛒</span>
+          <span class="cart-label">Keranjang</span>
+          <span class="cart-badge" id="cartBadge" aria-live="polite">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-tag">Koleksi Terbaru 2026</span>
+          <h1 class="hero-title">Inovasi Gadget & Aksesoris Masa Depan</h1>
+          <p class="hero-description">
+            Temukan perangkat terbaik untuk meningkatkan produktivitas harianmu dengan kualitas orisinal, garansi resmi,
+            dan penawaran terbaik hari ini.
+          </p>
+          <div class="hero-actions">
+            <a href="#katalog" class="btn btn-primary">Lihat Produk</a>
+            <button class="btn btn-outline" id="promoInfoBtn" type="button">Klaim Voucher Diskon</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-card-preview">
+            <div class="preview-badge">Paling Populer 🔥</div>
+            <div class="preview-placeholder">🎧</div>
+            <h3>Wireless Noise Cancelling Headset</h3>
+            <p class="preview-price">Rp 1.499.000</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Keunggulan Singkat -->
+    <section class="features-section" id="fitur">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item">
+            <span class="feature-icon">🚚</span>
+            <div>
+              <h4>Bebas Ongkir</h4>
+              <p>Pengiriman cepat ke seluruh Indonesia</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🛡️</span>
+            <div>
+              <h4>Garansi Resmi</h4>
+              <p>100% orisinal dengan garansi penggantian</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">💬</span>
+            <div>
+              <h4>Bantuan 24/7</h4>
+              <p>Tim support kami siap membantu kapan saja</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="catalog-section" id="katalog">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Katalog Produk Pilihan</h2>
+            <p class="section-subtitle">Pilih produk berkualitas sesuai kebutuhan teknologi dan gaya hidupmu.</p>
+          </div>
+
+          <!-- Kategori Filter -->
+          <div class="filter-controls" role="group" aria-label="Filter kategori produk">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="audio">Audio</button>
+            <button class="filter-btn" data-filter="wearable">Wearable</button>
+            <button class="filter-btn" data-filter="aksesoris">Aksesoris</button>
+          </div>
+        </div>
+
+        <!-- Grid Kartu Produk -->
+        <div class="product-grid" id="productGrid">
+          <!-- Kartu 1 -->
+          <article class="product-card" data-category="audio" data-id="1">
+            <div class="product-image-wrapper">
+              <span class="product-tag-discount">-15%</span>
+              <div class="product-image-box">🎧</div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Audio</span>
+              <h3 class="product-title">Studio Pro Wireless Headphone</h3>
+              <p class="product-desc">Fitur Active Noise Cancelling cerdas dengan baterai tahan hingga 40 jam.</p>
+              <div class="product-rating">
+                <span class="stars" aria-label="Rating 4.9 dari 5">★★★★★</span>
+                <span class="rating-number">4.9 (128 ulasan)</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">Rp 1.499.000</span>
+                <button class="btn btn-cart add-to-cart-btn" data-name="Studio Pro Wireless Headphone"
+                  data-price="1499000">
+                  + Keranjang
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kartu 2 -->
+          <article class="product-card" data-category="wearable" data-id="2">
+            <div class="product-image-wrapper">
+              <span class="product-tag-new">Baru</span>
+              <div class="product-image-box">⌚</div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Wearable</span>
+              <h3 class="product-title">Apex Smartwatch Ultra Fitness</h3>
+              <p class="product-desc">Layar AMOLED tajam, pelacak detak jantung, SpO2, dan GPS presisi tinggi.</p>
+              <div class="product-rating">
+                <span class="stars" aria-label="Rating 4.8 dari 5">★★★★☆</span>
+                <span class="rating-number">4.8 (85 ulasan)</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">Rp 899.000</span>
+                <button class="btn btn-cart add-to-cart-btn" data-name="Apex Smartwatch Ultra Fitness"
+                  data-price="899000">
+                  + Keranjang
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kartu 3 -->
+          <article class="product-card" data-category="audio" data-id="3">
+            <div class="product-image-wrapper">
+              <div class="product-image-box">🔊</div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Audio</span>
+              <h3 class="product-title">Pulse Waterproof Bluetooth Speaker</h3>
+              <p class="product-desc">Bass bertenaga tahan air IPX7, pas untuk kegiatan indoor maupun outdoor.</p>
+              <div class="product-rating">
+                <span class="stars" aria-label="Rating 4.7 dari 5">★★★★☆</span>
+                <span class="rating-number">4.7 (94 ulasan)</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">Rp 649.000</span>
+                <button class="btn btn-cart add-to-cart-btn" data-name="Pulse Waterproof Bluetooth Speaker"
+                  data-price="649000">
+                  + Keranjang
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kartu 4 -->
+          <article class="product-card" data-category="aksesoris" data-id="4">
+            <div class="product-image-wrapper">
+              <div class="product-image-box">⌨️</div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Aksesoris</span>
+              <h3 class="product-title">Mechanical Gaming Keyboard 75%</h3>
+              <p class="product-desc">Desain ringkas hot-swappable dengan switch empuk dan lampu RGB dinamis.</p>
+              <div class="product-rating">
+                <span class="stars" aria-label="Rating 5.0 dari 5">★★★★★</span>
+                <span class="rating-number">5.0 (210 ulasan)</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">Rp 789.000</span>
+                <button class="btn btn-cart add-to-cart-btn" data-name="Mechanical Gaming Keyboard 75%"
+                  data-price="789000">
+                  + Keranjang
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kartu 5 -->
+          <article class="product-card" data-category="aksesoris" data-id="5">
+            <div class="product-image-wrapper">
+              <span class="product-tag-discount">-20%</span>
+              <div class="product-image-box">🖱️</div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Aksesoris</span>
+              <h3 class="product-title">Ergo Wireless Productivity Mouse</h3>
+              <p class="product-desc">Bentuk ergonomis mengurangi ketegangan pergelangan tangan seharian.</p>
+              <div class="product-rating">
+                <span class="stars" aria-label="Rating 4.6 dari 5">★★★★☆</span>
+                <span class="rating-number">4.6 (62 ulasan)</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">Rp 349.000</span>
+                <button class="btn btn-cart add-to-cart-btn" data-name="Ergo Wireless Productivity Mouse"
+                  data-price="349000">
+                  + Keranjang
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Kartu 6 -->
+          <article class="product-card" data-category="wearable" data-id="6">
+            <div class="product-image-wrapper">
+              <div class="product-image-box">👓</div>
+            </div>
+            <div class="product-content">
+              <span class="product-category">Wearable</span>
+              <h3 class="product-title">Smart Audio Glasses Blue-Light</h3>
+              <p class="product-desc">Kacamata pelindung radiasi layar dengan speaker open-ear terintegrasi.</p>
+              <div class="product-rating">
+                <span class="stars" aria-label="Rating 4.8 dari 5">★★★★☆</span>
+                <span class="rating-number">4.8 (43 ulasan)</span>
+              </div>
+              <div class="product-footer">
+                <span class="product-price">Rp 1.199.000</span>
+                <button class="btn btn-cart add-to-cart-btn" data-name="Smart Audio Glasses Blue-Light"
+                  data-price="1199000">
+                  + Keranjang
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="newsletter-section" id="kontak">
+      <div class="container newsletter-container">
+        <div class="newsletter-text">
+          <span class="badge-pill">Langganan Info</span>
+          <h2>Dapatkan Promo Eksklusif Mingguan</h2>
+          <p>Daftarkan email dan nama kamu untuk memperoleh voucher diskon hingga 30% dan pembaruan produk terkini.</p>
+        </div>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="userName">Nama Lengkap <span class="required">*</span></label>
+            <input type="text" id="userName" name="userName" class="form-control" placeholder="Contoh: Budi Santoso"
+              required minlength="3">
+            <small class="error-msg" id="nameError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="userEmail">Alamat Email <span class="required">*</span></label>
+            <input type="email" id="userEmail" name="userEmail" class="form-control" placeholder="nama@domain.com"
+              required>
+            <small class="error-msg" id="emailError" aria-live="polite"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="userCategory">Kategori Minat</label>
+            <select id="userCategory" name="userCategory" class="form-control">
+              <option value="audio">Audio & Musik</option>
+              <option value="wearable">Smartwatch & Wearables</option>
+              <option value="aksesoris">Aksesoris Komputer</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+            Klaim Voucher Sekarang
+          </button>
+
+          <div class="form-feedback success" id="formSuccess" role="alert" hidden>
+            ✅ Terima kasih! Kode voucher telah dikirim ke email kamu.
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" role="dialog" aria-labelledby="cartDrawerTitle">
+    <div class="cart-drawer-header">
+      <h3 id="cartDrawerTitle">Keranjang Belanja</h3>
+      <button class="close-drawer-btn" id="closeCartBtn" aria-label="Tutup Keranjang">&times;</button>
+    </div>
+    <div class="cart-drawer-body" id="cartItemList">
+      <p class="empty-cart-message">Keranjang belanja kamu masih kosong.</p>
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <strong id="cartTotalPrice">Rp 0</strong>
+      </div>
+      <button class="btn btn-primary btn-block" id="checkoutBtn" disabled>Lanjutkan ke Pembayaran</button>
+      <button class="btn btn-outline btn-block" id="clearCartBtn">Kosongkan Keranjang</button>
+    </div>
+  </aside>
+  <div class="drawer-overlay" id="drawerOverlay" tabindex="-1"></div>
+
+  <!-- TOAST NOTIFIKASI -->
+  <div class="toast-container" id="toastNotification" role="status" aria-live="polite"></div>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="brand-logo footer-logo">
+          <span class="logo-icon" aria-hidden="true">🛍️</span>
+          <span class="logo-text">Toko<strong>Kita</strong></span>
+        </div>
+        <p class="footer-desc">
+          Platform e-commerce katalog teknologi modern terpercaya untuk kebutuhan produktivitas dan gaya hidup masa
+          kini.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navigasi Cepat</h4>
+        <ul class="footer-links">
+          <li><a href="#hero">Beranda</a></li>
+          <li><a href="#katalog">Katalog Produk</a></li>
+          <li><a href="#fitur">Keunggulan Layanan</a></li>
+          <li><a href="#kontak">Hubungi Kami</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Kategori</h4>
+        <ul class="footer-links">
+          <li><a href="#katalog">Audio & Headphone</a></li>
+          <li><a href="#katalog">Smartwatch & Wearable</a></li>
+          <li><a href="#katalog">Keyboard & Mouse</a></li>
+          <li><a href="#katalog">Aksesoris Smart Office</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Kontak & Lokasi</h4>
+        <p class="footer-contact">📍 Jl. Raya Kampus ITTS, Surabaya</p>
+        <p class="footer-contact">✉️ support@tokokita.id</p>
+        <p class="footer-contact">📞 +62 812-3456-7890</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p>&copy; 2026 TokoKita. Seluruh hak cipta dilindungi undang-undang.</p>
+        <p class="footer-credit">Tugas 2 Praktikum Antarmuka Web — HTML, CSS, JavaScript Murni.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
