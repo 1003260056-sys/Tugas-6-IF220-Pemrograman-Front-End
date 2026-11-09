@@ -130,6 +130,19 @@ button {
   padding-inline: var(--spacing-lg);
 }
 
+/* Aksesibilitas: Teks untuk Screen Reader */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -364,6 +377,13 @@ button {
   margin-block: var(--spacing-md);
 }
 
+.preview-product-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-top: var(--spacing-xs);
+}
+
 .preview-price {
   font-size: 1.3rem;
   font-weight: 700;
@@ -397,6 +417,7 @@ button {
   border-radius: var(--radius-md);
 }
 
+.feature-item h3,
 .feature-item h4 {
   font-size: 1rem;
   color: var(--color-text-main);
@@ -742,6 +763,12 @@ body.dark-theme .form-control.invalid {
   align-items: center;
 }
 
+.cart-drawer-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
 .close-drawer-btn {
   background: transparent;
   font-size: 1.6rem;
@@ -777,6 +804,7 @@ body.dark-theme .form-control.invalid {
   border-bottom: 1px solid var(--color-border);
 }
 
+.cart-item-info h3,
 .cart-item-info h5 {
   font-size: 0.9rem;
   margin-bottom: 2px;

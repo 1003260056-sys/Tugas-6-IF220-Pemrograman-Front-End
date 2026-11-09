@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
         row.className = 'cart-item-row';
         row.innerHTML = `
           <div class="cart-item-info">
-            <h5>${item.name}</h5>
+            <h3 class="cart-item-title">${item.name}</h3>
             <span>${formatRupiah(item.price)}</span>
           </div>
           <button class="cart-item-remove" data-index="${index}" aria-label="Hapus ${item.name}">Hapus</button>
